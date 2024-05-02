@@ -1,4 +1,4 @@
-package bubble.test.ex01;
+package bubble.test.ex02;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -62,6 +62,20 @@ public class BubbleFrame extends JFrame {
 				}
 
 			} // end of KeyPressed
+
+			@Override
+			public void keyReleased(KeyEvent e) {
+				switch (e.getKeyCode()) {
+
+				case KeyEvent.VK_LEFT:
+					player.setLeft(false);
+					break;
+				case KeyEvent.VK_RIGHT:
+					player.setRight(false);
+					break;
+				}
+
+			} // end of KeyReleased
 		});
 
 	}

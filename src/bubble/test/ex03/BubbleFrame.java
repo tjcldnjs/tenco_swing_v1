@@ -1,4 +1,4 @@
-package bubble.test.ex01;
+package bubble.test.ex03;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -17,10 +17,16 @@ public class BubbleFrame extends JFrame {
 		initData();
 		setInitLayout();
 		addEventListener();
+
+		// Player 백그라운드 서비스 시작
+
+		new Thread(new BackgroundPlayerService(player)).start();
 	}
 
 	private void initData() {
-		backgroundMap = new JLabel(new ImageIcon("img/backgroundMap.png"));
+		// todo 이미지 변경
+		backgroundMap = new JLabel(new ImageIcon("img/backgroundMapService.png"));
+//		backgroundMap = new JLabel(new ImageIcon("img/test.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		// Frame --> root Panel
 		setContentPane(backgroundMap);
@@ -62,6 +68,19 @@ public class BubbleFrame extends JFrame {
 				}
 
 			} // end of KeyPressed
+
+			@Override
+			public void keyReleased(KeyEvent e) {
+				switch (e.getKeyCode()) {
+
+				case KeyEvent.VK_LEFT:
+					player.setLeft(false);
+					break;
+				case KeyEvent.VK_RIGHT:
+					player.setRight(false);
+				}
+
+			} // end of KeyReleased
 		});
 
 	}
