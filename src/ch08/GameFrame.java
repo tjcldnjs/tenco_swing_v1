@@ -59,31 +59,31 @@ public class GameFrame extends JFrame {
 			// false : 오른쪽으로 가는 상황
 			boolean direction = true;
 			while (flag) {
-					System.out.println("진행중");
+				System.out.println("진행중");
 
-					if (direction) {
-						enemyX -= 10;
-					} else {
-						enemyX += 10;
-					}
+				if (direction) {
+					enemyX -= 10;
+				} else {
+					enemyX += 10;
+				}
 
-					// 방향 바꾸는 개념은 적군 x 좌표 값이
-					if (enemyX <= 50) {
-						// false --> 오른쪽으로
-						direction = false;
-					}
+				// 방향 바꾸는 개념은 적군 x 좌표 값이
+				if (enemyX <= 50) {
+					// false --> 오른쪽으로
+					direction = false;
+				}
 
-					if (enemyX >= 500) {
-						// true --> 왼쪽으로
-						direction = true;
-					}
-					try {
-						Thread.sleep(50);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-					repaint();
- 			}
+				if (enemyX >= 500) {
+					// true --> 왼쪽으로
+					direction = true;
+				}
+				try {
+					Thread.sleep(50);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				repaint();
+			}
 		}
 	}
 
