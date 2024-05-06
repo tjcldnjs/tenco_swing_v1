@@ -25,7 +25,7 @@ public class Player extends JLabel implements Moveable {
 
 	// enum 타입의 활용
 	PlayerWay playerWay;
-	
+
 	// get,set
 	public Player() {
 		initData();
@@ -138,7 +138,7 @@ public class Player extends JLabel implements Moveable {
 		rightWallCrash = false;
 
 		playerWay = playerWay.RIGHT;
-		
+
 	}
 
 	private void setInitLayout() {

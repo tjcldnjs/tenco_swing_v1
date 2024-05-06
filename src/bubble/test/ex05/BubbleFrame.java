@@ -33,7 +33,7 @@ public class BubbleFrame extends JFrame {
 		setSize(1000, 640);
 
 		player = new Player();
-		
+
 	}
 
 	private void setInitLayout() {
@@ -57,17 +57,17 @@ public class BubbleFrame extends JFrame {
 				switch (e.getKeyCode()) {
 
 				case KeyEvent.VK_LEFT:
-					
+
 					// 왼쪽으로 방향키 누르고 있다면
 					// key 이벤트가 계속 <- <- <- <- <-
 					// 왼쪽 상태가 아니라면
 					// 왼쪽 벽에 충돌 한게 아니라면
-					if(!player.isLeft() && !player.isLeftWallCrash()) {
+					if (!player.isLeft() && !player.isLeftWallCrash()) {
 						player.left();
 					}
 					break;
 				case KeyEvent.VK_RIGHT:
-					if(!player.isRight() && !player.isRightWallCrash()) {
+					if (!player.isRight() && !player.isRightWallCrash()) {
 						player.right();
 					}
 					break;
@@ -92,10 +92,10 @@ public class BubbleFrame extends JFrame {
 					player.setLeft(false);
 					break;
 				case KeyEvent.VK_RIGHT:
-					//오른쪽으로 가는 상태 멈춤
+					// 오른쪽으로 가는 상태 멈춤
 					player.setRight(false);
-					default:
-						break;
+				default:
+					break;
 				}
 
 			} // end of KeyReleased

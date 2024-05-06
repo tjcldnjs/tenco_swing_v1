@@ -14,7 +14,7 @@ public class Bubble extends JLabel {
 	private boolean left;
 	private boolean right;
 	private boolean up;
-	
+
 	// 적군을 맞춘 상태
 	private int state; // 0.(기본물방울), 1.(적을 가둔 상태 물방울)
 
@@ -123,18 +123,14 @@ public class Bubble extends JLabel {
 
 	private void setInitLayout() {
 
-		x = player.getX ();
-		y = player.getY ();
+		x = player.getX();
+		y = player.getY();
 
 		setIcon(bubble);
 		setSize(50, 50);
 		setLocation(x, y);
-		
 
 //		setVisible(true);
 	}
-	
-		
-		
 
 }

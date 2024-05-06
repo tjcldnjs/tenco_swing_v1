@@ -158,9 +158,9 @@ public class Bubble extends JLabel implements Moveable {
 	@Override
 	public void left() {
 		left = true;
-		for(int i = 0; i < 400; i++) {
+		for (int i = 0; i < 400; i++) {
 			x--;
-			setLocation(x,y);
+			setLocation(x, y);
 			try {
 				Thread.sleep(1);
 			} catch (InterruptedException e) {
@@ -173,9 +173,9 @@ public class Bubble extends JLabel implements Moveable {
 	@Override
 	public void right() {
 		right = true;
-		for(int i = 0; i < 400; i++) {
+		for (int i = 0; i < 400; i++) {
 			x++;
-			setLocation(x,y);
+			setLocation(x, y);
 			try {
 				Thread.sleep(1);
 			} catch (InterruptedException e) {
@@ -188,9 +188,9 @@ public class Bubble extends JLabel implements Moveable {
 	@Override
 	public void up() {
 		up = true;
-		while(true) {
+		while (true) {
 			y--;
-			setLocation(x,y);
+			setLocation(x, y);
 			try {
 				Thread.sleep(1);
 			} catch (InterruptedException e) {

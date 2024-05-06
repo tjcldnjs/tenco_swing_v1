@@ -41,9 +41,9 @@ public class BackgroundPlayerService implements Runnable {
 
 			int bottomColorLeft = image.getRGB(player.getX() + 20, player.getY() + 50 + 5);
 			int bottomColorRight = image.getRGB(player.getX() + 50 + 10, player.getY() + 50 + 5);
-			
+
 			// 하얀색은 int 값 = -1
-			if(bottomColorLeft + bottomColorRight != -2) {
+			if (bottomColorLeft + bottomColorRight != -2) {
 				// 여기는 멈추어야 한다.(빨간 바닥 또는 파란색 바닥)
 				player.setDown(false);
 			} else {
@@ -51,11 +51,11 @@ public class BackgroundPlayerService implements Runnable {
 				// 그리고
 				// 플레이어가 내려가는 상태가 아니라면
 				// down() 호출
-				if(!player.isUp() && !player.isDown()) {
-					player.down(); 
-					
+				if (!player.isUp() && !player.isDown()) {
+					player.down();
+
 				}
-				
+
 			}
 
 			// 왼쪽벽에 충돌함
