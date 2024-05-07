@@ -1,4 +1,4 @@
-package bubble;
+package bubble.test.ex09;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -6,9 +6,6 @@ import java.awt.event.KeyEvent;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-
-import bubble.components.Enemy;
-import bubble.components.Player;
 
 
 // Heap --> 객체 
@@ -31,13 +28,13 @@ public class BubbleFrame extends JFrame {
 	private JLabel backgroundMap;
 	// 포함관계 - 콤포지션
 	private Player player;  // <-- 나를 생성시킨 BubbleFrame 주소값을 같이 던저서 생성 시킨다면 Bf 기능을 호출 할 수 있다. 
-	private Enemy enemy1;
-	
+
 	public BubbleFrame() {
 		initData();
 		setInitLayout();
 		addEventListener();
-		
+		// Player 백그라운드 서비스 시작
+		new Thread(new BackgroundPlayerService(player)).start();
 	}
 
 	private void initData() {
@@ -52,7 +49,6 @@ public class BubbleFrame extends JFrame {
 		// mContext --> 참조 타입() --> 주소값에 크기는 기본 4byte 이다.
 		player = new Player(mContext);
 
-		enemy1 = new Enemy(mContext);
 	}
 
 	private void setInitLayout() {
@@ -63,7 +59,6 @@ public class BubbleFrame extends JFrame {
 		setVisible(true);
 
 		add(player);
-		add(enemy1);
 
 	}
 
@@ -134,10 +129,6 @@ public class BubbleFrame extends JFrame {
 		return player;
 	}
 
-	public Enemy getEnemy() {
-		return enemy1;
-	}
-	
 	// 코드 테스트
 	public static void main(String[] args) {
 		// main 함수를 가지고 있는 클래스는 하위에 생성된 모든 객체들에
